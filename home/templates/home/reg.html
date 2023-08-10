@@ -1,0 +1,27 @@
+{% extends "home/base.html" %}
+{% block title %}
+	<title>Register</title>
+{% endblock title %}
+{% block content %}
+<br>
+<div class="container" style="background-color: rgba(97, 214, 225, 0.648);">
+	<div class="content-section">
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Join Us</legend>
+				{{ form.as_p }}
+			</fieldset>
+			<br>
+			<div class="form-group">
+				<button class="btn btn-outline-info" type="submit" style="color: black;">Sign Up</button>
+			</div>
+		</form>
+		<div class="border-top-pt3">
+			<small class="text-muted">
+				Already have an account? <a class="ml-2" href="{% url 'ghms-login-pat' %}">Log In</a>
+			</small>
+		</div>
+	</div>
+</div>
+{% endblock content %}
